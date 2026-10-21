@@ -1,0 +1,28 @@
+    h2 {color: brown;}
+    h1 {background: brown;}
+
+    navbar{
+        position: sticky;
+        top: 0;
+        z-index: 20;
+    }
+
+    /*container navigasi utma*/
+navbar {
+    display: flex;
+    justify-content: center;        /*membuat menu beranda ditengah*/
+    align-items: center;            /*Jarak antar kotak*/
+    gap: 12px;
+    padding: 15px;
+    background-color: blanchedalmond;       /*Warna navigasi*/
+    flex-wrap: wrap;                           /*agar rapi dilayar hp kecil*/
+    font-size: 20px;
+}
+
+ /*efek dari kursor yang diarahkan (hover)*/
+ navbar a:hover {
+    background-color: brown;                     /*Latar berubah jadi hijau*/
+    color:yellow;                                /*cwarna teks berubah kuning*/
+    transform: translateY(-9);                     /*Kotak sedikit terangkat*/
+    box-shadow: 0 4px 8px rgba(0, 0,0.1);        /*Bayangan Kotak*/
+ }

@@ -1,0 +1,967 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilda Lutfiana | Portofolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+
+    <style>
+        :root {
+            --biru: #3030e8;
+            --ungu: #6a1fd0;
+            --pink: #e0299b;
+            --abu: #f7f7f9;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section, header {
+            scroll-margin-top: 80px;
+        }
+
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            color: #1f2430;
+            background: #fff;
+        }
+
+        /* Navbar */
+        .navbar-brand {
+            color: var(--biru);
+            font-weight: 800;
+        }
+
+        .nav-link {
+            font-size: 0.85rem;
+            color: #1f2430;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--ungu) !important;
+        }
+
+        /* Gradasi */
+        .grad-text {
+            background: linear-gradient(90deg, var(--ungu), var(--pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .grad-bg {
+            background: linear-gradient(135deg, var(--biru), var(--pink));
+        }
+
+        /* Hero */
+        .badge-hero {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 0.04em;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(90deg, var(--biru), var(--pink));
+            border-radius: 5px;
+            padding: 0.5rem 0.8rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2.3rem, 6vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.15;
+        }
+
+        .btn-biru {
+            background: var(--biru);
+            border: 2px solid var(--biru);
+            color: white;
+            font-weight: 700;
+            border-radius: 5px;
+            padding: 0.75rem 1.5rem;
+        }
+
+        .btn-biru:hover {
+            background: #2323c2;
+            border-color: #2323c2;
+            color: white;
+        }
+
+        .btn-garis {
+            background: white;
+            border: 1.5px solid #9ca3af;
+            color: #1f2430;
+            font-weight: 600;
+            border-radius: 5px;
+            padding: 0.75rem 1.5rem;
+        }
+
+        .btn-garis:hover {
+            border-color: var(--ungu);
+            color: var(--ungu);
+        }
+
+        /* Foto profil */
+        .photo-wrap {
+            position: relative;
+            max-width: 360px;
+        }
+
+        .photo-box {
+            aspect-ratio: 1 / 1.15;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .dots {
+            position: absolute;
+            z-index: 2;
+            width: 85px;
+            height: 110px;
+            background-image: radial-gradient(
+                var(--biru) 2px,
+                transparent 2.5px
+            );
+            background-size: 14px 14px;
+        }
+
+        .dots.tr {
+            top: 10%;
+            right: -25px;
+        }
+
+        .dots.bl {
+            bottom: 8%;
+            left: -25px;
+        }
+
+        /* Judul section */
+        .bg-abu {
+            background: var(--abu);
+        }
+
+        .judul {
+            font-weight: 800;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            background: linear-gradient(90deg, var(--ungu), var(--pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Tabel */
+        .table thead th {
+            background: var(--abu);
+            white-space: nowrap;
+        }
+
+        .table td {
+            vertical-align: middle;
+        }
+
+        .link-portal {
+            color: var(--ungu);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .link-portal:hover {
+            text-decoration: underline;
+        }
+
+        /* Keahlian */
+        .badge-skill {
+            background: #efe9fb;
+            color: var(--ungu);
+            font-weight: 600;
+            padding: 0.65rem 1rem;
+        }
+
+        /* Sertifikat */
+        .cert-img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: contain;
+            background: white;
+            padding: 8px;
+        }
+
+        .card {
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Form */
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--ungu);
+            box-shadow: 0 0 0 0.2rem rgba(106, 31, 208, 0.15);
+        }
+
+        footer {
+            background: #171725;
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.3rem;
+            }
+
+            .judul {
+                font-size: 1.7rem;
+            }
+
+            .dots {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navMenu"
+      data-bs-offset="80" tabindex="0">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white fixed-top border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Wilda Lutfiana</a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navMenu"
+                    aria-controls="navMenu" aria-expanded="false"
+                    aria-label="Buka menu navigasi">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tentang">Tentang Saya</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pendidikan">Pendidikan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#keahlian">Keahlian & Hobi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pengalaman">Pengalaman</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#sertifikat"
+                           role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Sertifikat
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow-sm">
+                            <li>
+                                <a class="dropdown-item" href="#pelatihan">
+                                    Sertifikat Pelatihan
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#seminar">
+                                    Sertifikat Seminar
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#proyek">Proyek</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="home" style="padding-top: 130px; padding-bottom: 90px;">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6 text-center text-lg-start order-2 order-lg-1">
+                    <span class="badge-hero text-uppercase">
+                        Web · Database · Sistem Informasi
+                    </span>
+
+                    <p class="fs-4 fw-light text-secondary mt-4 mb-2">
+                        Halo, saya Wilda Lutfiana
+                    </p>
+
+                    <h1 class="hero-title grad-text">
+                        Belajar, Berkarya, dan Berkembang di Dunia Teknologi
+                    </h1>
+
+                    <p class="text-secondary mt-3">
+                        Mahasiswa Sistem Informasi yang memiliki minat
+                        dalam pemrograman web, basis data, dan pengembangan
+                        sistem informasi.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-3 mt-4
+                                justify-content-center justify-content-lg-start">
+                        <a href="#tentang" class="btn btn-biru">
+                            Tentang Saya
+                        </a>
+                        <a href="#pengalaman" class="btn btn-garis">
+                            Pengalaman
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 order-1 order-lg-2
+                            d-flex justify-content-center">
+                    <div class="photo-wrap w-100">
+                        <div class="photo-box grad-bg">
+                            <img src="images/wilda.jpeg"
+                                 alt="Foto Wilda Lutfiana">
+                        </div>
+                        <span class="dots tr" aria-hidden="true"></span>
+                        <span class="dots bl" aria-hidden="true"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- A. TENTANG SAYA -->
+        <section id="tentang" class="bg-abu py-5">
+            <div class="container py-4">
+                <h2 class="judul">A. Tentang Saya</h2>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center text-secondary">
+                        <p>
+                            Selamat datang di website pribadi saya.
+                            Website ini dibuat untuk memperkenalkan profil,
+                            riwayat pendidikan, keahlian, pengalaman, dan
+                            kegiatan akademik saya.
+                        </p>
+
+                        <p class="mb-4">
+                            Saya Wilda Lutfiana, mahasiswa Program Studi
+                            Sistem Informasi di Universitas Dian Nuswantoro.
+                            Saya memiliki minat dalam bidang teknologi
+                            informasi, khususnya pemrograman web,
+                            pengembangan basis data, dan pembuatan aplikasi.
+                            Saya senang mempelajari hal baru dan bekerja
+                            sama dalam menyelesaikan tugas maupun proyek.
+                        </p>
+
+                        <div class="d-flex flex-wrap gap-2 justify-content-center">
+                            <span class="badge rounded-pill badge-skill">
+                                Microsoft Word
+                            </span>
+                            <span class="badge rounded-pill badge-skill">
+                                Microsoft Excel Dasar
+                            </span>
+                            <span class="badge rounded-pill badge-skill">
+                                HTML Dasar
+                            </span>
+                            <span class="badge rounded-pill badge-skill">
+                                Komunikasi
+                            </span>
+                            <span class="badge rounded-pill badge-skill">
+                                Kerja Sama Tim
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- B. RIWAYAT PENDIDIKAN -->
+        <section id="pendidikan" class="py-5">
+            <div class="container py-4">
+                <h2 class="judul">B. Riwayat Pendidikan</h2>
+
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th class="ps-4">No</th>
+                                    <th>Tingkat Pendidikan</th>
+                                    <th>Nama Instansi</th>
+                                    <th>Tahun</th>
+                                    <th>Keterangan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="ps-4">1</th>
+                                    <td>Sekolah Dasar (SD)</td>
+                                    <td>
+                                        <a class="link-portal"
+                                           href="https://referensi.data.kemendikdasmen.go.id/pendidikan/npsn/20322026"
+                                           target="_blank" rel="noopener noreferrer">
+                                            SD N 1 Tosari
+                                        </a>
+                                    </td>
+                                    <td>2013 - 2019</td>
+                                    <td>Lulus</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="ps-4">2</th>
+                                    <td>Sekolah Menengah Pertama (SMP)</td>
+                                    <td>
+                                        <a class="link-portal"
+                                           href="https://www.smpn2brangsong.sch.id/"
+                                           target="_blank" rel="noopener noreferrer">
+                                            SMP N 2 Brangsong
+                                        </a>
+                                    </td>
+                                    <td>2019 - 2022</td>
+                                    <td>Lulus</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="ps-4">3</th>
+                                    <td>Sekolah Menengah Kejuruan (SMK)</td>
+                                    <td>
+                                        <a class="link-portal"
+                                           href="https://smkbinautamakendal.sch.id/"
+                                           target="_blank" rel="noopener noreferrer">
+                                            SMK Bina Utama
+                                        </a>
+                                    </td>
+                                    <td>2022 - 2025</td>
+                                    <td>Jurusan PPLG</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="ps-4">4</th>
+                                    <td>Perguruan Tinggi (S1)</td>
+                                    <td>
+                                        <a class="link-portal"
+                                           href="https://www.dinus.ac.id/"
+                                           target="_blank" rel="noopener noreferrer">
+                                            Universitas Dian Nuswantoro
+                                        </a>
+                                    </td>
+                                    <td>2025 - 2028</td>
+                                    <td>Sistem Informasi</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- C. KEAHLIAN DAN HOBI -->
+        <section id="keahlian" class="bg-abu py-5">
+            <div class="container py-4">
+                <h2 class="judul">C. Keahlian & Hobi</h2>
+
+                <div class="row g-4">
+
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm rounded-4 h-100">
+                            <div class="card-body p-4">
+                                <h3 class="h5 fw-bold mb-3">
+                                    1. Keahlian Utama
+                                </h3>
+
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        Microsoft Word
+                                    </li>
+                                    <li class="list-group-item">
+                                        Microsoft Excel Dasar
+                                    </li>
+                                    <li class="list-group-item">
+                                        HTML Dasar
+                                    </li>
+                                    <li class="list-group-item">
+                                        Komunikasi
+                                    </li>
+                                    <li class="list-group-item">
+                                        Kerja Sama Tim
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm rounded-4 h-100">
+                            <div class="card-body p-4">
+                                <h3 class="h5 fw-bold mb-3">
+                                    2. Hobi & Minat
+                                </h3>
+
+                                <ol class="list-group list-group-numbered list-group-flush">
+                                    <li class="list-group-item">
+                                        Membaca dokumentasi di
+                                        <a class="link-portal"
+                                           href="https://www.w3schools.com"
+                                           target="_blank" rel="noopener noreferrer">
+                                            W3Schools
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Eksplorasi pembuatan aplikasi web
+                                    </li>
+                                    <li class="list-group-item">
+                                        Menulis
+                                    </li>
+                                    <li class="list-group-item">
+                                        Badminton
+                                    </li>
+                                    <li class="list-group-item">
+                                        Traveling
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- D. PENGALAMAN -->
+        <section id="pengalaman" class="py-5">
+            <div class="container py-4">
+                <h2 class="judul">D. Pengalaman</h2>
+
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th class="ps-4">No</th>
+                                    <th>Kegiatan</th>
+                                    <th>Deskripsi</th>
+                                    <th>Tahun</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <th class="ps-4">1</th>
+                                    <td>Praktik Kerja Lapangan</td>
+                                    <td>Lapas Terbuka Kelas IIB Kendal.</td>
+                                    <td>2023</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="ps-4">2</th>
+                                    <td>Sertifikasi Okupasi Asisten Pemrograman Junior</td>
+                                    <td>
+                                        Menerapkan operasi CRUD
+                                        (Create, Read, Update, Delete)
+                                        dalam pemrograman.
+                                    </td>
+                                    <td>2024</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="ps-4">3</th>
+                                    <td>Pekan Budaya Santri</td>
+                                    <td>Menghafal dan melafalkan Juz 30.</td>
+                                    <td>2025</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="ps-4">4</th>
+                                    <td>Basic Training for Next Generation</td>
+                                    <td>Belajar tentang Mobile App.</td>
+                                    <td>2025</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="ps-4">5</th>
+                                    <td>Proyek Kelompok</td>
+                                    <td>
+                                        Mengerjakan proyek bersama selama
+                                        perkuliahan.
+                                    </td>
+                                    <td>2026</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="ps-4">6</th>
+                                    <td>Praktikum</td>
+                                    <td>
+                                        Mempelajari dasar-dasar
+                                        pengembangan web.
+                                    </td>
+                                    <td>2026</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- E. SERTIFIKAT PELATIHAN -->
+        <section id="sertifikat" class="bg-abu py-5">
+            <div class="container py-4">
+                <h2 class="judul" id="pelatihan">
+                    E. Sertifikat Pelatihan
+                </h2>
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+
+                    <div class="col">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <img src="images/SERTIF PELATIHAN BNSP.jpeg"
+                                 class="card-img-top cert-img"
+                                 alt="Sertifikat Pelatihan BNSP">
+                            <div class="card-body">
+                                <h3 class="h6 card-title mb-0">
+                                    Sertifikat Pelatihan BNSP
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <img src="images/PKL.jpeg"
+                                 class="card-img-top cert-img"
+                                 alt="Sertifikat Praktik Kerja Lapangan">
+                            <div class="card-body">
+                                <h3 class="h6 card-title mb-0">
+                                    Sertifikat Praktik Kerja Lapangan
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <img src="images/PELATIHAN BTNG MOBILE.PNG"
+                                 class="card-img-top cert-img"
+                                 alt="Sertifikat Pelatihan Basic Training Mobile">
+                            <div class="card-body">
+                                <h3 class="h6 card-title mb-0">
+                                    Basic Training for Next Generation - Mobile App
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- F. SERTIFIKAT SEMINAR -->
+        <section id="sertifikat" class="bg-abu py-5">
+            <div class="container py-4">
+                <h2 class="judul" id="Seminar">
+                    F. Sertifikat Seminar
+                </h2>
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+
+                    <div class="col">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <img src="images/sertif sensasi.jpeg"
+                                 class="card-img-top cert-img"
+                                 alt="Sertifikat Seminar Sensasi">
+                            <div class="card-body">
+                                <h3 class="h6 card-title mb-0">
+                                    Sertifikat Seminar Sensasi
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <img src="images/SERTIF NOXEL.png"
+                                 class="card-img-top cert-img"
+                                 alt="Sertifikat Seminar Noxel">
+                            <div class="card-body">
+                                <h3 class="h6 card-title mb-0">
+                                    Sertifikat Seminar Noxel
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <img src="images/SEMINAR DINACOM.png"
+                                 class="card-img-top cert-img"
+                                 alt="Sertifikat Seminar DINACOM">
+                            <div class="card-body">
+                                <h3 class="h6 card-title mb-0">
+                                    Seminar DINACOM
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+        <!-- G. PROYEK DAN AKTIVITAS AKADEMIK -->
+        <section id="proyek" class="py-5">
+            <div class="container py-4">
+                <h2 class="judul">G. Proyek & Aktivitas Akademik</h2>
+
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <article class="card border-0 shadow-sm rounded-4 h-100">
+                            <div class="card-body p-4">
+                                <h3 class="h5 fw-bold">
+                                    Tugas Pemrograman Web 1
+                                </h3>
+                                <p class="text-secondary mb-0">
+                                    Proyek ini merupakan pembuatan halaman
+                                    profil dan formulir interaktif menggunakan
+                                    struktur elemen semantik HTML, tabel
+                                    terstruktur, serta beberapa elemen input
+                                    formulir. Website ini juga menggunakan
+                                    Bootstrap untuk membantu mengatur tampilan
+                                    agar responsif.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <aside class="card border-0 shadow-sm rounded-4 h-100">
+                            <div class="card-body p-4">
+                                <h3 class="h5 fw-bold">Catatan Akademik</h3>
+
+                                <p class="text-secondary">
+                                    Informasi jadwal perkuliahan dapat
+                                    dilihat melalui
+                                    <a class="link-portal"
+                                       href="https://mhs.dinus.ac.id"
+                                       target="_blank" rel="noopener noreferrer">
+                                        SiAdin Udinus
+                                    </a>.
+                                </p>
+
+                                <hr>
+
+                                <p class="text-secondary mb-0">
+                                    Informasi SMK Bina Utama dapat dilihat
+                                    melalui
+                                    <a class="link-portal"
+                                       href="https://smkbinautamakendal.sch.id/"
+                                       target="_blank" rel="noopener noreferrer">
+                                        Portal SMK Bina Utama
+                                    </a>.
+                                </p>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- H. FORM KONTAK -->
+        <section id="kontak" class="bg-abu py-5">
+            <div class="container py-4">
+                <h2 class="judul">H. Form Kontak Pengunjung</h2>
+
+                <p class="text-center text-secondary mb-4">
+                    Silakan isi formulir berikut untuk mengirimkan pesan.
+                </p>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-9 col-lg-7">
+
+                        <div class="card border-0 shadow-sm rounded-4">
+                            <div class="card-body p-4">
+
+                                <form action="simpan.php" method="post">
+
+                                    <div class="mb-3">
+                                        <label for="fnama" class="form-label">
+                                            Nama
+                                        </label>
+                                        <input type="text"
+                                               class="form-control"
+                                               id="fnama"
+                                               name="fnama"
+                                               placeholder="Masukkan nama lengkap"
+                                               required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="femail" class="form-label">
+                                            Email
+                                        </label>
+                                        <input type="email"
+                                               class="form-control"
+                                               id="femail"
+                                               name="femail"
+                                               placeholder="nama@email.com"
+                                               required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label d-block">
+                                            Jenis Kelamin
+                                        </label>
+
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input"
+                                                   type="radio"
+                                                   id="pria"
+                                                   name="fjkel"
+                                                   value="Pria"
+                                                   required>
+                                            <label class="form-check-label"
+                                                   for="pria">
+                                                Pria
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input"
+                                                   type="radio"
+                                                   id="wanita"
+                                                   name="fjkel"
+                                                   value="Wanita">
+                                            <label class="form-check-label"
+                                                   for="wanita">
+                                                Wanita
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="fprodi" class="form-label">
+                                            Program Studi
+                                        </label>
+
+                                        <select class="form-select"
+                                                id="fprodi"
+                                                name="fprodi"
+                                                required>
+                                            <option value="" selected disabled>
+                                                Pilih program studi
+                                            </option>
+                                            <option value="SI">
+                                                Sistem Informasi S1
+                                            </option>
+                                            <option value="TI">
+                                                Teknik Informatika S1
+                                            </option>
+                                            <option value="DKV">
+                                                Desain Komunikasi Visual S1
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label d-block">
+                                            Hobi / Minat
+                                        </label>
+
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input"
+                                                   type="checkbox"
+                                                   id="coding"
+                                                   name="fhobi[]"
+                                                   value="Coding">
+                                            <label class="form-check-label"
+                                                   for="coding">
+                                                Coding
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input"
+                                                   type="checkbox"
+                                                   id="membaca"
+                                                   name="fhobi[]"
+                                                   value="Membaca">
+                                            <label class="form-check-label"
+                                                   for="membaca">
+                                                Membaca
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="fpesan" class="form-label">
+                                            Pesan
+                                        </label>
+                                        <textarea class="form-control"
+                                                  id="fpesan"
+                                                  name="fpesan"
+                                                  rows="4"
+                                                  placeholder="Tuliskan pesan Anda..."
+                                                  required></textarea>
+                                    </div>
+
+                                    <button type="submit"
+                                            class="btn btn-biru w-100">
+                                        Kirim Pesan
+                                    </button>
+
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PENUTUP -->
+    <footer class="text-center text-white py-5">
+        <div class="container">
+            <h3 class="h5 mb-3">Penutup</h3>
+
+            <p class="mx-auto text-white-50"
+               style="max-width: 560px;">
+                Demikian perkenalan singkat tentang diri saya.
+                Semoga website ini dapat memberikan informasi yang
+                bermanfaat bagi pengunjung. Terima kasih telah
+                mengunjungi website portofolio saya.
+            </p>
+
+            <small class="text-white-50">
+                &copy; 2026 Wilda Lutfiana
+            </small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
